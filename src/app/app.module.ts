@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,9 +16,16 @@ import { ProductsPageComponent } from './pages/store/products-page/products-page
 import { CartPageComponent } from './pages/store/cart-page/cart-page.component';
 import { FramePageComponent } from './pages/master/frame.page';
 import { ProductCardComponent } from './components/store/product-card/product-card.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
+import { MaskDirective } from './directives/mask.directive';
+import { AuthService } from './services/auth.service';
+import { DataService } from './services/data.service';
+
+
 
 @NgModule({
-  declarations: [
+  declarations: [    
+    MaskDirective,
     AppComponent,    
     NavbarComponent,
     LoginPageComponent,
@@ -25,14 +35,18 @@ import { ProductCardComponent } from './components/store/product-card/product-ca
     ProductsPageComponent,
     CartPageComponent,
     FramePageComponent,
-    ProductCardComponent    
+    ProductCardComponent,
+    LoadingComponent    
   ],
   imports: [
     BrowserModule,    
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule    
   ],
-  providers: [],
+  providers: [AuthService,DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
