@@ -1,6 +1,7 @@
 # Petshop
 
-Responsive petshop site, with login and shopping-cart management. Use the [mockoon file](7181.mockoon.1.4.0.json) to simulate the back-end.
+Responsive petshop site, with login and shopping-cart management. 
+Import the [mockoon file](7181.mockoon.1.4.0.json) on [Mockoon](https://mockoon.com/) to simulate a static back-end.
 
 Project based on the [balta.io angular course](https://balta.io/cursos/criando-apps-web-com-angular-e-uikit).
 
